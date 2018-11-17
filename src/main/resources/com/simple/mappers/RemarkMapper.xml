@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.simple.dao.RemarkDao">
+
+	<resultMap type="Remark" id="RemarkResult">
+		<result property="id" column="id" />
+		<result property="remark" column="remark" />
+		<result property="yinsi" column="yinsi" />
+	</resultMap>
+
+	<insert id="add" parameterType="Remark">
+		insert into t_remark  values(null,#{remark},0);
+	</insert>
+
+	<update id="update" parameterType="Remark">
+		update t_remark
+		<set>
+			<if test="remark!=null and remark!=''">
+				remark=#{remark},
+			</if>
+			<if test="yinsi!=null and yinsi!=''">
+				yinsi=#{yinsi},
+			</if>
+		</set>
+		where id=#{id}
+	</update>
+	
+	
+	<select id="list" parameterType="Map" resultMap="RemarkResult">
+		select * from t_remark  
+		<where>
+			<if test="q!=null and q!=''">
+				and remark LIKE #{q} 
+			</if>
+		</where>
+		
+	</select>
+	
+	
+	
+
+</mapper> 
