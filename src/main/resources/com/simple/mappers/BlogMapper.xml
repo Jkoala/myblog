@@ -13,11 +13,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="replyHit" column="replyHit"/>
 		<result property="content" column="content"/>
 		<result property="keyWord" column="keyWord"/>
-		<!-- association定义关联对象的封装规则 
-	    select:表明当前属性是调用select指定的方法查询出结果
-	    column:指定将那一列的值传递给这个方法
-	    整个流程：使用Select指定的方法(传入column指定的这列参数的值)查出对象，并封装给property指定的属性
-	 -->
 		<association property="blogType" column="typeId" select="com.simple.dao.BlogTypeDao.findById"></association>
 	</resultMap>
 	
@@ -35,13 +30,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				and title like #{title}
 			</if>
 			<if test="typeId!=null and typeId!='' ">
-				and releaseDateStr=#{typeId}
+				and typeId=#{typeId}
 			</if>
 			<if test="releaseDateStr!=null and releaseDateStr!='' ">
 				and DATE_FORMAT(releaseDate,'%Y年%m月')=#{releaseDateStr}
 			</if>
 		</where>
-		<!-- desc是降序 -->
 		order by releaseDate desc
 		<if test="start!=null and size!=null">
 			limit #{start},#{size}
