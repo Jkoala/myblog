@@ -9,19 +9,14 @@
 			src="${pageContext.request.contextPath}/static/images/list_icon.png" />
 		最新博客
 	</div>
-
 	<div class="datas">
 		<ul>
 			<c:forEach var="blog" items="${blogList }">
-				<li style="margin-bottom: 30px"><span class="date"><a
-						href="${pageContext.request.contextPath}/blog/articles/${blog.id }.html"><fmt:formatDate
-								value="${blog.releaseDate }" type="date" pattern="yyyy年MM月dd日" /></a></span>
-					<span class="title"><a
-						href="${pageContext.request.contextPath}/blog/articles/${blog.id }.html">${blog.title }</a></span>
-					<span class="summary"><c:out value="${blog.summary }" escapeXml="true"></c:out></span> 
-					<span	class="img"> 
-					<c:forEach var="image"
-							items="${blog.imageList }">
+				<li style="margin-bottom: 30px"><span class="title">
+				<a	href="${pageContext.request.contextPath}/blog/articles/${blog.id }.html" style="font-size: 20px;color:black">${blog.title }</a></span>
+				<span class="summary"><c:out value="${blog.summary }"
+							escapeXml="true"></c:out></span> <span class="img"> <c:forEach
+							var="image" items="${blog.imageList }">
 							<a href="/blog/articles/${blog.id }.html">${image}</a>
 						  		&nbsp;&nbsp;
 					</c:forEach>
@@ -30,8 +25,6 @@
 							pattern="yyyy-MM-dd HH:mm" /> 阅读(${blog.clickHit })
 						评论(${blog.replyHit })
 				</span></li>
-				<hr
-					style="height: 5px; border: none; border-top: 1px dashed gray; padding-bottom: 10px;" />
 			</c:forEach>
 		</ul>
 	</div>

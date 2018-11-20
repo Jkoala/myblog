@@ -1,108 +1,80 @@
+/*全局*/
 .data_list{
-	border: 1px solid #E5E5E5;
 	padding: 10px;
-	background-color: #FDFDFD;
-	margin-top: 0px;
-	margin-bottom: 10px;
-}
+	margin-top: 10px;
+	margin-bottom: 0px;
 
-.data_list .data_list_title{
-	font-size: 15px;
+}
+/* 文章主标题 */
+.col-md-9 .data_list .data_list_title{
+	font-size: 24px;
 	font-weight: bold;
-	border-bottom: 1px solid #E5E5E5;
+	/*border-bottom: 1px solid #393939;*/
 	padding-bottom: 10px;
 	padding-top: 5px;
 }
-
-.data_list .datas a{
-	color: #004FAD;
-}
-
-
-
-.data_list .data_list_title img{
+.col-md-9 .data_list .data_list_title img{
 	margin-top: 1px;
-	vertical-align: top;
+	vertical-align: center;
+	padding-left: 15px;
 }
+/*左侧博客*/
 
-.data_list .datas ul {
+文章ul
+.col-md-9 .data_list .datas ul {
 	list-style-type: none;
 	padding-left: 15px;
 }
-
-.data_list .datas ul li {
+/* 文章单个 */
+.col-md-9 .data_list .datas ul li {
+	padding: 20px;
 	margin-top: 10px;
+	color: rgb(108,108,108);
+	background-color: #fff;
 }
 
+.col-md-9 .data_list .datas ul li span{
+	padding-bottom: 10px;
+}
+.col-md-9  .data_list .datas a{
+	color: rgb(108,108,108);
+}
+/* //文章全部部分 */
 .data_list .data_list_title .datas{
 	padding: 5px;
 }
-
-.datas .date ,.datas .title {
+/* 此处是文章的标题 */
+.datas .date ,.datas .title {/*datas指文章部分  data是单个文章的内容*/
 	display:block;
 	line-height: 1.5;
 	font-family: Verdana,Arial,Helvetica,sans-serif;
 	padding-bottom: 5px;
-	font-size: 14px;
+	color:red;
 }
-
 
 .datas .date a{
-	color: #935A32;
 	font-weight: bold;
 }
-
 .datas .title a{
-	  color: rgb(21, 43, 121);
-	  font-weight: bold;
+	font-weight: bold;
 }
-
 .datas .summary{
 	display:block;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	line-height: 19.5px;
 	padding-top: 5px;
 	font-size: 13px;
-	color: rgb(0, 0, 0);
 }
-
 .datas .img{
 	display:block;
 	clear:both;
-}
-
-.datas img{
 	padding:10px;
 	padding-left:0px;
 	max-height: 150px;
 	max-width:300px;
 }
 
-.datas .info{
-	display:block;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	line-height: 18px;
-	float: right;
-	font-size: 12px;
-}
-
-.data_list .user_image{
-	text-align: center;
-}
-
-.data_list .user_image img{
-	padding-top:10px;
-	/*width: 200px;
-	height: 250px;*/
-}
-
-.data_list .nickName , .data_list .userSign{
-	text-align: center;
-}
-
-
 /*博客内容显示的css*/
-
 .data_list .blog_title{
 	margin-top:20px;
 	text-align: center;
@@ -120,10 +92,54 @@
 
 .data_list .blog_content p{
 	margin: 0px 0 15px;
-    text-indent: 2em;
+	text-indent: 2em;
+}
+/*右侧开始*/
+.datas .info{/*用户信息*/
+	display:block;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	line-height: 18px;
+	float: right;
+	font-size: 12px;
+}
+.data_list .user_image{
+	text-align: center;
+}
+.data_list .user_image img{
+	padding-top:10px;
+	/*width: 200px;
+	height: 250px;*/
+}
+.data_list .nickName , .data_list .userSign{
+	text-align: center;
+	vertical-align: center;
+}
+/*用户信息*/
+/*col-3侧边css*/
+.col-md-3 .data_list .data_list_title{
+	color: rgb(170,170,170);
+}
+.col-md-3 .data_list .datas{
+
+}
+.col-md-3 .data_list .datas ul{
+	list-style-type: none;
+
+}
+.col-md-3 .data_list .datas li{
+	padding: 10px;
+	color: rgb(108,108,108);
+
+}
+.col-md-3 .data_list .datas li a{
+	text-decoration: none;
+}
+.col-md-3 .data_list .datas li:hover{
+	color:#fff;
+	background-color:rgb(108,108,108);
 }
 
-
+/*col-3侧边css*/
 /* 上一页  下一页  分享css  关键词*/
 .data_list .blog_share{
 	padding-left: 330px;
@@ -138,7 +154,7 @@
 }
 
 .data_list .blog_keyWord a{
-	color: black;
+
 	/*font-style: italic;*/
 }
 
@@ -150,7 +166,7 @@
 
 
 
-   /*评论的css*/
+/*评论的css*/
 .data_list .commentDatas{
 	padding: 10px;
 }
@@ -169,7 +185,7 @@
 
 
 .data_list .commentDatas .otherComment{
-		margin-top:10px;
+	margin-top:10px;
 	margin-bottom: 5px;
 	padding-bottom:15px;
 	border-bottom: 1px dotted gray;
