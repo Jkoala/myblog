@@ -46,7 +46,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a class="active" href="index.html">主页</a></li>
-                    <li><a class="scroll" href="#w3-agile-about">关于我</a></li>
+                    <li><a class="scroll" href="${pageContext.request.contextPath}/blogger/aboutMe.html">关于我</a></li>
                     <li><a class="scroll" href="#wthree-gallery">我的相册</a></li>
                     <li><a class="scroll" href="#agileinfo-news">我的代码</a></li>
                     <li><a class="scroll" href="#agileits-specials">小工具</a></li>

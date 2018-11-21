@@ -39,7 +39,7 @@
 			//拿到导航的json格式数据
 		var treeData;
 			/* result是一个拓扑序列 */
-		$.post("${pageContext.request.contextPath}/admin/blogger/getTreeMenu.do",{},function(result){ 
+		$.post("${pageContext.request.contextPath}/admin/blogger/getTreeMenu.html",{},function(result){ 
 	        //console.log(result);
 			treeData = eval(result);
 			 //console.log(treeData);

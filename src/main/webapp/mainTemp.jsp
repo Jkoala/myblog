@@ -49,12 +49,12 @@ body {
                 <div class="data_list">
                     <div class="data_list_title">
                         <img
-                                src="./static/images/user_icon.png" />
+                                src="${pageContext.request.contextPath}/static/images/user_icon.png" />
                         博主信息
                     </div>
                     <div class="user_image">
                         <img
-                                src="./static/userImages/${blogger.imageName}" />
+                                src="${pageContext.request.contextPath}/static/userImages/${blogger.imageName}" />
                     </div>
                     <div class="nickName">${blogger.nickName}</div>
                     <div class="userSign">(${blogger.sign})</div>
@@ -63,13 +63,13 @@ body {
                 <div class="data_list">
                     <div class="data_list_title">
                         <img
-                                src="./static/images/byType_icon.png" />
+                                src="${pageContext.request.contextPath}/static/images/byType_icon.png" />
                         按日志类别
                     </div>
                     <div class="datas">
                         <ul>
                             <c:forEach var="blogTypeCount" items="${blogTypeCountList }">
-                                <li><span><a href="./index.html?typeId=${blogTypeCount.id}">${blogTypeCount.typeName }(${blogTypeCount.blogCount })</a></span></li>
+                                <li><span><a href="${pageContext.request.contextPath}/index.html?typeId=${blogTypeCount.id}">${blogTypeCount.typeName }(${blogTypeCount.blogCount })</a></span></li>
                             </c:forEach>
 
                         </ul>
@@ -82,13 +82,13 @@ body {
                 <div class="data_list">
                     <div class="data_list_title">
                         <img
-                                src="./static/images/byDate_icon.png" />
+                                src="${pageContext.request.contextPath}/static/images/byDate_icon.png" />
                         按日志日期
                     </div>
                     <div class="datas" >
                         <ul>
                             <c:forEach var="blogCount" items="${blogCountList }">
-                                <li><span><a href="./index.html?releaseDateStr=${blogCount.releaseDateStr}">${blogCount.releaseDateStr }(${blogCount.blogCount })</a></span></li>
+                                <li><span><a href="${pageContext.request.contextPath}/index.html?releaseDateStr=${blogCount.releaseDateStr}">${blogCount.releaseDateStr }(${blogCount.blogCount })</a></span></li>
                             </c:forEach>
 
                         </ul>
@@ -98,7 +98,7 @@ body {
                 <div class="data_list">
                     <div class="data_list_title">
                         <img
-                                src="./static/images/link_icon.png" />
+                                src="${pageContext.request.contextPath}/static/images/link_icon.png" />
                         友情链接
                     </div>
                     <div class="datas">

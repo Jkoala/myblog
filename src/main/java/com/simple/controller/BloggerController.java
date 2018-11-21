@@ -23,7 +23,9 @@ public class BloggerController {
 	@RequestMapping("/login")
 	public String login(Blogger blogger,HttpServletRequest request){
 		Subject subject=SecurityUtils.getSubject();
-		UsernamePasswordToken token=new UsernamePasswordToken(blogger.getUserName(), CryptographyUtil.md5(blogger.getPassword(), "java1234"));
+		System.out.println(blogger.getPassword());
+		UsernamePasswordToken token=new UsernamePasswordToken(blogger.getUserName(), CryptographyUtil.md5(blogger.getPassword(), "love"));
+		System.out.println(token.getPassword());
 		try{
 			subject.login(token); // 登录验证
 			//如果登陆成功 就不会报错  报错就是登陆失败了
@@ -32,6 +34,7 @@ public class BloggerController {
 			e.printStackTrace();
 			request.setAttribute("blogger", blogger);
 			request.setAttribute("errorInfo", "用户名或者密码错误！");
+			
 			return "login";
 		}
 	}
@@ -45,9 +48,10 @@ public class BloggerController {
 	@RequestMapping("/aboutMe")
 	public ModelAndView aboutMe()throws Exception{
 		ModelAndView mav=new ModelAndView();
-		mav.addObject("pageTitle", "关于博主_java开源博客系统");
+		mav.addObject("pageTitle", "长琴的个人博客");
 		mav.addObject("mainPage", "foreground/blogger/info.jsp");
 		mav.setViewName("mainTemp");
+		System.out.println("sssssssssssssssssssssssssss");
 		return mav;
 	}
 	

@@ -1,0 +1,44 @@
+.about-content{
+    padding: 20px;
+}
+/*
+个人信息介绍*/
+.item-info .title h3{
+    color: #3f2863;
+    font-size: 30px;
+}
+
+.item-info .cont img{
+    width: 300px;
+    position: absolute;
+    left: 30px;
+    top: 80px;
+}
+.item-info .cont .per-info{
+    padding-left: 250px;
+    margin-top: 30px;
+}
+.item-info .cont .per-info span{
+    line-height: 50px;
+    font-size: 24px;
+    font-family: STKaiti;
+}
+.item-info .cont .per-info .interest p{
+	line-height: 50px;
+    font-size: 24px;
+    font-family: STKaiti;
+   	display: inline-block;
+}
+/*
+联系人部分*/
+.item-contact .title h3{
+	
+    margin-top: 70px;
+    color: #3f2863;
+    font-size: 24px;
+}
+.item-contact .cont p{
+	padding-top:30px;
+	padding-right:50px;
+	display: inline-block;
+}

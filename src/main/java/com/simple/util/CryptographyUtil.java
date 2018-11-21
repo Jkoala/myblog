@@ -21,6 +21,6 @@ public class CryptographyUtil {
 	
 	public static void main(String[] args) {
 		String password="o";
-		System.out.println("Md5º”√‹£∫"+md5(password,"java1234"));
+		System.out.println("Md5º”√‹£∫"+md5("o","love"));
 	}
 }
