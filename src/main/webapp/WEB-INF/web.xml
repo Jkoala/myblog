@@ -66,11 +66,11 @@ id="WebApp_ID" version="3.1">
 		<load-on-startup>1</load-on-startup>
 		<async-supported>true</async-supported>
 	</servlet>
-	<!-- 过虑do -->
-<!-- 	<servlet-mapping>
+	<!-- 后台用do过虑 -->
+ 	<servlet-mapping>
         <servlet-name>springMVC</servlet-name>
         <url-pattern>*.do</url-pattern>
-    </servlet-mapping> -->
+    </servlet-mapping> 
     <!-- 过虑html -->
 	<servlet-mapping>
 		<servlet-name>springMVC</servlet-name>

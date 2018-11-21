@@ -53,25 +53,19 @@ public class IndexContrller {
 			@RequestParam(value="releaseDateStr",required=false)String releaseDateStr,
 			HttpServletRequest request)throws Exception{
 		
-	
 		ModelAndView mav=new ModelAndView();
 		if(StringUtil.isEmpty(page)){
 			page="1";
 		}
-		
 		String webPath = request.getServletContext().getRealPath("/");
-		debugLogger = Logger.getLogger("chenhao");
-		debugLogger.debug("【【系统目录是】】" + webPath);
-		
+
 		PageBean pageBean=new PageBean(Integer.parseInt(page),10);
 		Map<String,Object> map=new HashMap<String,Object>();
 		map.put("start", pageBean.getStart());
 		map.put("size", pageBean.getPageSize());
 		map.put("typeId", typeId);
 		map.put("releaseDateStr", releaseDateStr);
-		
 		List<Blog> blogList=blogService.list(map);
-		
 		for(Blog blog:blogList){
 			List<String> imageList=blog.getImageList();
 			String blogInfo=blog.getContent();
@@ -121,15 +115,15 @@ public class IndexContrller {
 	
 	
 	/**
-	 * 源码下载
+	 * 代码下载
 	 * @return
 	 * @throws Exception
 	 */
 	@RequestMapping("/download")
 	public ModelAndView download()throws Exception{
 		ModelAndView mav=new ModelAndView();
-		mav.addObject("pageTitle", "本站源码下载页面_陈豪-博客系统-chenhao.tv");
-		mav.addObject("mainPage", "foreground/system/download.jsp");
+		mav.addObject("pageTitle", "简单爱的代码");
+		mav.addObject("mainPage", "foreground/system/codeDownload.jsp");
 		mav.setViewName("mainTemp");
 		return mav;
 	}

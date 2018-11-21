@@ -65,7 +65,7 @@ public class BlogController {
 		map.put("state", 1);
 		//通过id和状态获得该片文章评论
 		mav.addObject("commentList", commentService.list(map));
-		mav.addObject("pageTitle", blog.getTitle() + "java开源博客系统");
+		mav.addObject("pageTitle", blog.getTitle() + "长琴的博客系统");
 		mav.addObject("pageCode", this.getUpAndDownPageCode(blogService.getLastBlog(id), blogService.getNextBlog(id),
 				request.getServletContext().getContextPath()));
 		mav.addObject("mainPage", "foreground/blog/view.jsp");
@@ -113,7 +113,7 @@ public class BlogController {
 			page = "1";
 		}
 		int pageSize = 100;
-		mav.addObject("pageTitle", "搜索关键字'" + q + "'结果页面_java开源博客系统");
+		mav.addObject("pageTitle", "搜索关键字'" + q + "'查询博客");
 		mav.addObject("mainPage", "foreground/blog/result.jsp");
 		List<Blog> blogList = blogIndex.searchBlog(q);
 		long totalPage = blogList.size() % pageSize == 0 ? blogList.size()  / pageSize : blogList.size()  / pageSize + 1;

@@ -51,7 +51,50 @@ public class BloggerController {
 		mav.addObject("pageTitle", "长琴的个人博客");
 		mav.addObject("mainPage", "foreground/blogger/info.jsp");
 		mav.setViewName("mainTemp");
-		System.out.println("sssssssssssssssssssssssssss");
+
+		return mav;
+	}
+	
+
+	/**
+	 * 我的相册
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("/myAlbum")
+	public ModelAndView myAlbum()throws Exception{
+		ModelAndView mav=new ModelAndView();
+		mav.addObject("pageTitle", "长琴的相册");
+		mav.setViewName("foreground/system/myAlbum");
+		return mav;
+	}
+	
+
+	/**
+	 * 我的代码
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("/myCode")
+	public ModelAndView myCode()throws Exception{
+		ModelAndView mav=new ModelAndView();
+		mav.addObject("pageTitle", "长琴的代码");
+		mav.addObject("mainPage", "foreground/system/myCode.html");
+		mav.setViewName("mainTemp");
+		return mav;
+	}
+	
+	/**
+	 * 我的专栏
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("/myColumn")
+	public ModelAndView myColumn()throws Exception{
+		ModelAndView mav=new ModelAndView();
+		mav.addObject("pageTitle", "长琴的专栏");
+		mav.addObject("mainPage", "foreground/system/myColumn");
+		mav.setViewName("mainTemp");
 		return mav;
 	}
 	

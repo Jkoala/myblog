@@ -14,9 +14,9 @@
 		<c:forEach var="blog" items="${blogList }">
 			<li style="margin-bottom: 30px" class="layui-anim layui-anim-upbit">
 				<!-- 右侧图片 -->
-				<c:forEach var="image"	items="${blog.imageList[0] }">
-				<a class="wrap-img"	href="/blog/articles/${blog.id }.html" target="_blank"> ${image[0]}	</a>		  	
-				</c:forEach>
+				<%-- <c:forEach var="image"	items="${blog.imageList[0]}"> --%>
+				<a class="wrap-img"	href="/blog/articles/${blog.id }.html" target="_blank">${blog.imageList[0]}</a>		  	
+				<%-- </c:forEach> --%>
 				<div class="content">
 				<a	href="${pageContext.request.contextPath}/blog/articles/${blog.id }.html" class="title" target="_blank">${blog.title }</a>
 					<p class="abstract">

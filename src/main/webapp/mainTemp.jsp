@@ -57,7 +57,7 @@ body {
                                 src="${pageContext.request.contextPath}/static/userImages/${blogger.imageName}" />
                     </div>
                     <div class="nickName">${blogger.nickName}</div>
-                    <div class="userSign">(${blogger.sign})</div>
+                    <div class="userSign">${blogger.sign}</div>
                 </div>
 
                 <div class="data_list">
