@@ -17,7 +17,6 @@
 <![endif]-->
 </head>
 <body style="background: white;">
-
 		<jsp:include page="/foreground/common/menu.jsp"/>
   <div class="album-content w1000"  id="layer-photos-demo" class="layer-photos-demo">
     <div class="img-info">

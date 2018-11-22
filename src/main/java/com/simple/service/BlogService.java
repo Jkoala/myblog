@@ -24,7 +24,6 @@ public interface BlogService {
 	 * @return
 	 */
 	public List<Blog> list(Map<String,Object> map);
-	
 	/**
 	 * 获取总记录数
 	 * @param map
@@ -77,6 +76,8 @@ public interface BlogService {
 	 * 查询指定的博客类别下的博客数量
 	 */
 	public Integer getBlogByTypeId(Integer typeId);
+
+	
 	
 	
 	

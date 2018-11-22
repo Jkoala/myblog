@@ -17,9 +17,13 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/easy-ui/demo/demo.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/easy-ui/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/easy-ui/jquery.easyui.min.js"></script>
+<!-- 引入easyui支持 -->
+<script type="text/javascript" charset="gbk" src="${pageContext.request.contextPath}/static/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="gbk" src="${pageContext.request.contextPath}/static/ueditor/ueditor.all.min.js"> </script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/easy-ui/locale/easyui-lang-zh_CN.js"></script>
 <!-- 引入easyui支持 -->
-
+<!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+<script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/static/ueditor/lang/zh-cn/zh-cn.js"></script>
 
 <style>
 /*把easyui的菜单样式简单换一下。 稍微高一点。 颜色变一下  */
@@ -156,9 +160,12 @@
 			}
 		},"json");
 	}
-	//刷新系统
+	//刷新lucene
 	function refreshLucene(){
-		$.post("${pageContext.request.contextPath}/admin/system/refreshLucene.do",{},function(result){
+		///admin/blog
+		$.post("${pageContext.request.contextPath}/admin/blog/refresh.do"
+				,{'title':title,'blogType.id':blogTypeId,'contentNoTag':UE.getEditor('editor').getContentTxt(),'content':content,'summary':UE.getEditor('editor').getContentTxt().substr(0,155),'keyWord':keyWord}
+				,function(){
 			if(result.success){
 				$.messager.alert("系统提示","Lucene 刷新成功");
 			}else{
@@ -166,6 +173,30 @@
 			}
 		},"json");
 	}
+/* 	function submitData(){
+	var title=$("#title").val();
+	var blogTypeId=$("#blogTypeId").combobox("getValue")
+	var content=UE.getEditor('editor').getContent()
+	var keyWord=$("#keyWord").val();
+		if(title==null || title==''){
+			alert("请输入标题！");
+		}else if(blogTypeId==null || blogTypeId==''){
+			alert("请选择博客类别！");
+		}else if(content==null || content==''){
+			alert("请填写内容！");
+		}else{
+			$.post("${pageContext.request.contextPath}/admin/blog/save.do",{'title':title,'blogType.id':blogTypeId,
+				'contentNoTag':UE.getEditor('editor').getContentTxt(),
+				'content':content,'summary':UE.getEditor('editor').getContentTxt().substr(0,155),'keyWord':keyWord},function(result){
+				if(result.success){
+					alert("博客发布成功！");
+					resultValue();
+				}else{
+					alert("博客发布失败！");
+				}
+			},"json");
+		}
+	} */
 	//退出登入
 	function logout(){
 		$.messager.confirm("系统提示","您确定要退出系统吗?",function(r){
@@ -174,8 +205,6 @@
 			}
 		});
 	}
-	
-	
 	
 </script>
 </head>
@@ -246,7 +275,10 @@
 
 
  
- 
+<!-- 实例化编辑器 -->
+<script type="text/javascript">
+    var ue = UE.getEditor('editor');
+</script>
  
 </body>
 </html>

@@ -34,6 +34,42 @@ public class BlogAdminController {
 	
 	private BlogIndex blogIndex=new BlogIndex();
 	
+	@RequestMapping("/refresh")
+	public void refresh(HttpServletResponse response,HttpServletRequest request) {
+		Map<String,Object> map=new HashMap<String,Object>();
+		List<Blog> blogList= blogService.list(map);
+		System.out.println("refresh:"+blogList.size());
+		//int resultTotal=0; 
+		//String rootPath=request.getServletContext().getRealPath("/");
+		/*if(blog.getId()==null){
+			resultTotal=blogService.add(blog);
+			blogIndex.addIndex(blog);
+		}else{
+			resultTotal = blogService.update(blog);
+			blogIndex.updateIndex(blog);
+		}*/
+		Gson gson = new Gson();
+		Result result = new Result();
+		try {
+			blogIndex.IndexManager(blogList);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			result.setSuccess(false);
+		}
+		result.setSuccess(true);
+		
+		try {
+			ResponseUtil.write(response, gson.toJson(result));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	private void list(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		
+	}
 	/**
 	 * 添加或者修改博客信息
 	 * @param blog

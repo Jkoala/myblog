@@ -5,10 +5,10 @@
 <link href="${pageContext.request.contextPath}/static/css/style.css"
 	rel="stylesheet" type="text/css" media="all" />
 <!-- stylesheet -->
+
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery-2.1.4.min.js"></script><!-- Required-js -->
 <script
-	src="${pageContext.request.contextPath}/static/bootstrap3/js/jquery.min.js"></script>
-<script
-	src="${pageContext.request.contextPath}/static/bootstrap3/js/bootstrap.min.js"></script>
+	src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
 
 
 
@@ -28,7 +28,7 @@
 				</button>
 				<div class="w3-logo">
 					<h1>
-						<a href="#">Road trip</a>
+						<a href="${pageContext.request.contextPath}/index.html">Road trip</a>
 					</h1>
 				</div>
 			</div>
@@ -44,13 +44,17 @@
 						href="${pageContext.request.contextPath}/blogger/myAlbum.html">我的相册</a></li>
 					<li><a class="scroll"
 						href="${pageContext.request.contextPath}/blogger/myCode.html">我的代码</a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
+					       
+					<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="dropdownMenu1"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">小工具<span class="caret"></span></a>
-						<ul class="dropdown-menu">
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 							<li><a class="scroll" href="#w3layouts-team">爬虫</a></li>
 							<li><a class="scroll" href="#w3ls-testimonials">摇塞子</a></li>
-						</ul></li>
+						</ul>
+					</li>
+						
 					<li class="dropdown"><a
 						href="${pageContext.request.contextPath}/blogger/myAlbum.html"
 						class="dropdown-toggle" data-toggle="dropdown" role="button"

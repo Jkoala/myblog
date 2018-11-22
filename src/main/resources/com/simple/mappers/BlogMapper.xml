@@ -22,7 +22,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		GROUP BY DATE_FORMAT(releaseDate,'%Y年%m月') 
 		ORDER BY  DATE_FORMAT(releaseDate,'%Y年%m月') DESC;
 	</select>
-	
 	<select id="list" parameterType="Map" resultMap="BlogResult">
 		select * from t_blog
 		<where>
@@ -37,7 +36,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			</if>
 		</where>
 		order by releaseDate desc
-		<if test="start!=null and size!=null">
+		<if test="start!=null and size!=null and start!='' and size!=''">
 			limit #{start},#{size}
 		</if>
 	</select>

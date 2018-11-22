@@ -14,19 +14,13 @@
 	href="${pageContext.request.contextPath}/static/bootstrap3/css/bootstrap.min.css">
 		<link rel="stylesheet"
 	href="${pageContext.request.contextPath}/static/layui/css/layui.css">
-<%-- <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/static/bootstrap3/css/bootstrap-theme.min.css"> --%>
     <link href="${pageContext.request.contextPath}/static/css/style.css" rel="stylesheet" type="text/css" media="all"/><!-- stylesheet -->
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/static/css/blog.css">
 
     <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery-2.1.4.min.js"></script><!-- Required-js -->
 <script
-	src="${pageContext.request.contextPath}/static/bootstrap3/js/jquery.min.js"></script>
-<script
-	src="${pageContext.request.contextPath}/static/bootstrap3/js/bootstrap.min.js"></script>
-	
-	
+	src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
 <title>${pageTitle}</title>
 <style type="text/css">
 body {
@@ -36,6 +30,7 @@ body {
 </style>
 </head>
 <body>
+		<!-- 可以下拉的都是传进来的 前端页面-->
 		<jsp:include page="${head}"/>
 		<jsp:include page="/foreground/common/menu.jsp"/>
 	<!--main ariticle view-->

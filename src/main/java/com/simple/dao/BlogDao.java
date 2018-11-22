@@ -26,6 +26,7 @@ public interface BlogDao {
 	 * @return
 	 */
 	public List<Blog> list(Map<String,Object> map);
+
 	
 	/**
 	 * 获取总记录数
