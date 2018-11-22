@@ -11,7 +11,7 @@
         <div class="panel"><img src="${pageContext.request.contextPath}/static/images/4.jpg" alt="Image 4"/></div>
     </div>
     <div class="w3layouts-header-title">
-        <h2>No matter where you go, there you are</h2>
+        <h2>Geek For You It Is Here</h2>
     </div>
 </div><!-- /container -->
 <!-- js required for banner slider -->

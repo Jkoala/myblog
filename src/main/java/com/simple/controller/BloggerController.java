@@ -48,9 +48,8 @@ public class BloggerController {
 	@RequestMapping("/aboutMe")
 	public ModelAndView aboutMe()throws Exception{
 		ModelAndView mav=new ModelAndView();
-		mav.addObject("pageTitle", "长琴的个人博客");
-		mav.addObject("mainPage", "foreground/blogger/info.jsp");
-		mav.setViewName("mainTemp");
+		mav.addObject("pageTitle", "长琴的资料");
+		mav.setViewName("foreground/blogger/info");
 
 		return mav;
 	}

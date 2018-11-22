@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
       <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/static/css/info.css">
+	<jsp:include page="/foreground/common/menu.jsp"/>
+
 <div class="about-content">
     <div class="w1000">
         <div class="item-info">

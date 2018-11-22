@@ -1,44 +1,35 @@
 .about-content{
     padding: 20px;
+    margin:0 auto;
 }
 /*
 个人信息介绍*/
 .item-info .title h3{
-    color: #3f2863;
+    color: #fff;
     font-size: 30px;
+    margin-left: 100px;
+
 }
 
 .item-info .cont img{
-    width: 300px;
-    position: absolute;
-    left: 30px;
-    top: 80px;
+	display: inline-block;
+    width: 500px;
+    margin-top: -90px;
 }
 .item-info .cont .per-info{
-    padding-left: 250px;
-    margin-top: 30px;
+	margin-top: 30px;
+    padding-left: 100px;
+    display: inline-block;
 }
 .item-info .cont .per-info span{
+
     line-height: 50px;
     font-size: 24px;
     font-family: STKaiti;
+    color: #fff;
 }
-.item-info .cont .per-info .interest p{
-	line-height: 50px;
-    font-size: 24px;
-    font-family: STKaiti;
-   	display: inline-block;
+.item-info .cont .per-info p{
+		padding-top: 40px;
 }
-/*
-联系人部分*/
-.item-contact .title h3{
-	
-    margin-top: 70px;
-    color: #3f2863;
-    font-size: 24px;
-}
-.item-contact .cont p{
-	padding-top:30px;
-	padding-right:50px;
-	display: inline-block;
-}
+
+
