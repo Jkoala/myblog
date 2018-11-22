@@ -9,27 +9,7 @@
 	src="${pageContext.request.contextPath}/static/bootstrap3/js/jquery.min.js"></script>
 <script
 	src="${pageContext.request.contextPath}/static/bootstrap3/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-	//检查输入
-	function checkData() {
-		var q = document.getElementById("q").value.trim();
-		if (q == null || q == "") {
-			alert("请输入您要查询的关键字！");
-			return false;
-		} else {
-			return true;
-		}
-	}
 
-	function search1() {
-		if (checkData()) {
-			//trim()用于去掉 一个字符串的字头和字尾的空白符
-			var q = document.getElementById("q").value.trim();
-			//重新加载该页面
-			window.location.href = "/blog/q.html?q=" + q;
-		}
-	}
-</script>
 
 
 <!-- nav header -->

@@ -75,6 +75,21 @@ public class SystemAdminController {
 		ResponseUtil.write(response, gson.toJson(result));
 		return null;
 	}
-	
+	/**
+	 * 刷新系统缓存
+	 */
+	@RequestMapping("/refreshLucene")
+	public String refreshLucene(HttpServletRequest request,HttpServletResponse response)throws Exception{
+		//这是拿到application对象 spring提供的。 HttpServletResponse response
+		/*
+		 * 这里写Lucene 代码
+		 * */
+		Result result = new Result();
+		Gson gson = new Gson();
+		result.setSuccess(true);
+		
+		ResponseUtil.write(response, gson.toJson(result));
+		return null;
+	}
 	
 }

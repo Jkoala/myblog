@@ -108,6 +108,7 @@ public class IndexContrller {
 		//mav.addObject("pageCode", PageUtil.genPagination(request.getContextPath()+"/index.html", 600, 10, 10, param.toString()));
 		mav.addObject("pageCode", PageUtil.genPagination(request.getContextPath()+"/index.html", blogService.getTotal(map), Integer.parseInt(page), pageBean.getPageSize(), param.toString()));
 		mav.addObject("pageTitle", "¼òµ¥°®");
+		mav.addObject("head","foreground/common/head.jsp");
 		mav.addObject("mainPage", "foreground/blog/list.jsp");
 		mav.setViewName("mainTemp");
 		return mav;

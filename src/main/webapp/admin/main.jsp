@@ -77,7 +77,10 @@
 			refreshSystem();
 			return;
 		}
-		
+		if(text=='lucene'){
+			refreshLucene();
+			return;
+		}
 		if(text=='安全退出'){
 			logout();
 			return;
@@ -150,6 +153,16 @@
 				$.messager.alert("系统提示","已成功刷新系统缓存！");
 			}else{
 				$.messager.alert("系统提示","刷新系统缓存失败！");
+			}
+		},"json");
+	}
+	//刷新系统
+	function refreshLucene(){
+		$.post("${pageContext.request.contextPath}/admin/system/refreshLucene.do",{},function(result){
+			if(result.success){
+				$.messager.alert("系统提示","Lucene 刷新成功");
+			}else{
+				$.messager.alert("系统提示","Lucene 刷新失败");
 			}
 		},"json");
 	}

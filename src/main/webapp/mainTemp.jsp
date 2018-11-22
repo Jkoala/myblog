@@ -36,7 +36,7 @@ body {
 </style>
 </head>
 <body>
-		<jsp:include page="/foreground/common/head.jsp"/>	
+		<jsp:include page="${head}"/>
 		<jsp:include page="/foreground/common/menu.jsp"/>
 	<!--main ariticle view-->
 <div style="background-color: #e4e4e4;">
