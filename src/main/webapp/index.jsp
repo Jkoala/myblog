@@ -16,7 +16,7 @@
 	href="${pageContext.request.contextPath}/static/layui/css/layui.css">
 <%-- <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/static/bootstrap3/css/bootstrap-theme.min.css"> --%>
-    <link href="${pageContext.request.contextPath}/static/css/style.css" rel="stylesheet" type="text/css" media="all"/><!-- stylesheet -->
+<link href="${pageContext.request.contextPath}/static/css/style.css" rel="stylesheet" type="text/css" media="all"/><!-- stylesheet -->
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/static/css/blog.css">
 

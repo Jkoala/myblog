@@ -96,7 +96,6 @@
 			</td>
 		</tr>
 	</table>
-	
 <!-- 实例化编辑器 -->
 <script type="text/javascript">
     var ue = UE.getEditor('editor');

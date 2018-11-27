@@ -38,16 +38,8 @@ public class BlogAdminController {
 	public void refresh(HttpServletResponse response,HttpServletRequest request) {
 		Map<String,Object> map=new HashMap<String,Object>();
 		List<Blog> blogList= blogService.list(map);
-		System.out.println("refresh:"+blogList.size());
-		//int resultTotal=0; 
-		//String rootPath=request.getServletContext().getRealPath("/");
-		/*if(blog.getId()==null){
-			resultTotal=blogService.add(blog);
-			blogIndex.addIndex(blog);
-		}else{
-			resultTotal = blogService.update(blog);
-			blogIndex.updateIndex(blog);
-		}*/
+		//System.out.println("refresh:"+blogList.size());
+
 		Gson gson = new Gson();
 		Result result = new Result();
 		try {
@@ -80,9 +72,8 @@ public class BlogAdminController {
 	@RequestMapping("/save")
 	public String save(Blog blog,HttpServletResponse response,HttpServletRequest request)throws Exception{
 		int resultTotal=0; 
-		String rootPath=request.getServletContext().getRealPath("/");
-		
-		if(blog.getId()==null){
+/*//		String rootPath=request.getServletContext().getRealPath("/");
+*/		if(blog.getId()==null){
 			resultTotal=blogService.add(blog);
 			blogIndex.addIndex(blog);
 		}else{

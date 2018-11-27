@@ -2,3 +2,6 @@ eclipse.preferences.version=1
 encoding//src/main/webapp/foreground/system/myAlbum.jsp=UTF-8
 encoding//src/main/webapp/foreground/system/myColumn.jsp=UTF-8
 encoding//src/main/webapp/static/css/album.css=UTF-8
+encoding//src/main/webapp/static/ueditor=GBK
+encoding//src/main/webapp/static/ueditor/jsp/config.json=UTF-8
+encoding//src/main/webapp/static/ueditor/ueditor.config.js=UTF-8

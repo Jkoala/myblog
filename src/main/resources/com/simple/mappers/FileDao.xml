@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.simple.po.FileDao">
+	<resultMap type="File" id="FileResult">
+		<result property="id" column="id"/>
+		<result property="title" column="title"/>
+		<result property="descript" column="descript"/>
+		<result property="releaseDate" column="releaseDate"/>
+		<result property="download" column="download"/>
+		<result property="ico" column="ico"/>
+		<result property="flag" column="flag"/>
+		<result property="keyWord" column="keyWord"/>
+		<result property="fileType" column="fileType"/>
+		<!-- //文件分类功能暂时不用 -->
+		<!-- <association property="fileType" column="typeId" select="com.simple.dao.BlogTypeDao.findById"></association> -->
+	</resultMap>
+	<!-- //获得文件列表 -->
+	<select id="list" parameterType="Map" resultMap="FileResult">
+		select * from t_file
+		<!-- <where>
+			<if test="title!=null and title!='' ">
+				and title like #{title}
+			</if>
+			<if test="fileType and fileType'' ">
+				fileType and =#{fileType}
+			</if>
+			<if test="releaseDateStr!=null and releaseDateStr!='' ">
+				and DATE_FORMAT(releaseDate,'%Y年%m月')=#{releaseDateStr}
+			</if>
+		</where> -->
+		order by releaseDate desc
+		<if test="start!=null and size!=null and start!='' and size!=''">
+			limit #{start},#{size}
+		</if>
+	</select>
+	
+	<!-- 得到总数 -->
+	<select id="getTotal" parameterType="Map" resultType="Long">
+		select count(*) from t_File
+		<!-- <where>
+			<if test="title!=null and title!='' ">
+				and title like #{title}
+			</if>
+			<if test="fileType and fileType'' ">
+				fileType and =#{fileType}
+			</if>
+			<if test="releaseDateStr!=null and releaseDateStr!='' ">
+				and DATE_FORMAT(releaseDate,'%Y年%m月')=#{releaseDateStr}
+			</if>
+		</where> -->
+	</select>
+	
+	<!-- 通过  title   descript  和 关键字  -->
+	<select id="searchFile" parameterType="String" resultMap="FileResult">
+	select * from t_file 
+		<!-- 		<select id="getTreeByParentId" parameterType="Map" resultMap="TreeResult">
+		select * from t_tree where parentId=#{id} and id in
+		<foreach item="i" collection="ids" open="(" separator=","
+			close=")">
+			#{i}
+		</foreach>
+		ORDER BY id ASC
+	</select> -->
+		<!--  <where>
+			    暂时不会 写 先不做
+				and title like #{value}
+			
+		
+				fileType and =#{fileType}
+		
+		
+				and DATE_FORMAT(releaseDate,'%Y年%m月')=#{releaseDateStr}
+			
+		</where> -->
+	</select>
+	<!-- //删除文件 -->
+	 <delete id="deletFile" parameterType="java.lang.Integer">
+        delete from t_file where id = #{id}
+    </delete>
+	<!-- //添加文件 -->
+	<insert id="insertFile" useGeneratedKeys="true" keyProperty="id"  parameterType="File" >
+		insert into t_file values(null,#{title},#{descript},now(),0,#{ico},21,#{keyWord},#{flag})
+	</insert>
+	
+	<update id="updateFile" parameterType="File">
+        update file
+        <set>
+        	<!-- 七个属性 下载量和id 不需要更改 -->
+            <if test="title != null">title=#{title},</if>
+            <if test="descript != null">descript=#{descript},</if>
+            <if test="releaseDate != null">releaseDate=now(),</if>
+            <if test="ico != null">ico=#{ico},</if>
+            <if test="filelType != null">filelType=#{filelType},</if>
+            <if test="flag != null">flag=#{flag},</if>
+            <if test="keyWords != null">keyWords=#{keyWords}</if>
+        </set>
+        where id=#{id}
+	</update>
+
+</mapper>
